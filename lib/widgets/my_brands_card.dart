@@ -17,6 +17,6 @@ class MyBrandsCard extends StatelessWidget {
             color: Colors.white,
             border: Border.all(color: Colors.grey.shade300, width: 1.0)),
         child:
-            Image.asset(brandlogo, width: 80, height: 80, fit: BoxFit.cover));
+            Image.network(brandlogo, width: 80, height: 80, fit: BoxFit.cover));
   }
 }
