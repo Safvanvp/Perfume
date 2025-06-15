@@ -72,19 +72,14 @@ class HomeScreen extends StatelessWidget {
                           MyTitleRow(title: 'Our Categories'),
                           const SizedBox(height: 10),
                           _buildCategoryGrid(provider),
-                          Consumer<HomeProvider>(
-                            builder: (context, homeProvider, _) {
-                              if (homeProvider.adImages.isEmpty) {
-                                return const Center(
-                                    child: CircularProgressIndicator());
-                              }
-
-                              return ChangeNotifierProvider(
-                                create: (_) =>
-                                    AdSliderProvider(homeProvider.adImages),
-                                child: const MyAdCard(),
-                              );
-                            },
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Image.asset('assets/images/ad2.png',
+                                fit: BoxFit.cover),
                           ),
                           const SizedBox(height: 20),
                           MyTitleRow(title: 'New Arrivals'),
